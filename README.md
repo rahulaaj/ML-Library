@@ -19,11 +19,12 @@ Library of Machine Learning Algorithms in Haskell
 	Some of these may really seem vague but implementing these will give our project an edge over others. :)
 
 2. Classification:
-	a). Decision Trees and Random Forests
+	a). Decision Trees
+	a_). Random Forests
 	b). Association Rule Mining
 	c). Naive Bayes
 	d). Bayesian Networks
-	e). SVM
+	e). SVM(Pathak)
 	f). ANN(Hingo)
 	g). KNN
 	h). Case-based reasoning Lazy Learner
