@@ -22,7 +22,7 @@ Library of Machine Learning Algorithms in Haskell
 	a). Decision Trees
 	a_). Random Forests
 	b). Association Rule Mining
-	c). Naive Bayes
+	c). Naive Bayes(Divyanshu)
 	d). Bayesian Networks
 	e). SVM(Pathak)
 	f). ANN(Hingo)
