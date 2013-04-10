@@ -5,7 +5,7 @@ Library of Machine Learning Algorithms in Haskell
 
 1. CLustering:
 	Partitioning Based-
-	a). K-means
+	a). K-means(Ajmera)
 	b). K-medoids
 	Hierarchichal Based-
 	a). Agglomerative Hierarchichal CLustering
@@ -30,8 +30,8 @@ Library of Machine Learning Algorithms in Haskell
 	h). Case-based reasoning Lazy Learner
 
 3. Regression:
-	a). Linear
-	b). Logistic
+	a). Linear(Ajmera)
+	b). Logistic(Ajmera)
 
 4. Ensembling:
 	a). Bagging
