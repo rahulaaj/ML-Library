@@ -23,6 +23,9 @@ dist x y = sqrt $ sum $ zipWith f x y
     f a b=(a-b)*(a-b)
     
 --find the minimum distance between a ref point and the collection points
+--minDist :: [Double]->[[Double]]->[Double]
+--minDist refPoint points = minimumBy (comparing $ dist refPoint) points
+
 minDist::[Double]->[[Double]]->(Double,[Double])
 minDist refPoint points = f $ distAll refPoint points
   where
