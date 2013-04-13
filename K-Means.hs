@@ -1,6 +1,7 @@
 import Data.List
 import Data.Ord
 
+--find the number of points
 number :: [[Double]]->Int
 number points= length points
 
