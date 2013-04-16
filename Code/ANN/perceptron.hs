@@ -14,4 +14,3 @@ output (inp, wts, th)	| total >= th	= 1
 trainWeights :: Input -> Weights -> LearnRate -> BinClass -> BinClass -> Weights
 trainWeights inp iniWts lr expClass actualClass = map wChngeFunc (zip inp iniWts)
 	where wChngeFunc (x, w) = w + lr * (actualClass - expClass) * x
-
