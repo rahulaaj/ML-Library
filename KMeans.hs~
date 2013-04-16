@@ -47,7 +47,7 @@ module KMeans where
 		let
 			a = findCentroid centroids points
 			func (x,y) (p,q) = x==p
-			b = groupBy func $ sort a
+			b = groupBy func a
 		in 
 			map (map snd) b
 	
