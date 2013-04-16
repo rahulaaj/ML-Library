@@ -300,7 +300,7 @@ module NaiveBayes where
 	probDocAllCategories cs doc = map (\cat -> (cat,probDocCategory cs doc cat)) $ categories cs
 	
 	--classify document
-	classify :: Classifier -> String -> (String,Double)
+	classify :: Classifier -> String -> String
 	classify cls doc = 
 		let
 			l = probDocAllCategories (wordCategoryStore cls ) doc
@@ -308,4 +308,4 @@ module NaiveBayes where
 			h = sortBy f l
 			i = head h
 		in
-			i
+			fst i
