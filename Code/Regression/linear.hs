@@ -12,7 +12,7 @@ import System.IO.Unsafe
 readD::String ->Double
 readD=read
 readDList []=[]
-readDList x=Data.List.map (readD . unpack) (splitOn (pack "\t ") (pack x))
+readDList x=Data.List.map (readD . unpack) (splitOn (pack "\t") (pack x))
 --main = print (readDList ([" 43.0\t 51.0\t 30.0\t 39.0\t 61.0\t 92.0\t 45.0"," 63.0\t 64.0\t 51.0\t 54.0\t 63.0\t 73.0\t 47.0"]))
 getXList []=[]
 getXList (x:xs)= (Data.List.tail (readDList x)) ++ getXList xs
