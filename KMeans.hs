@@ -1,8 +1,7 @@
-import Data.List
-import Data.Ord
-import Data.Char
-
-module KMeans where
+module KMeans where 	
+	import Data.List
+	import Data.Ord
+	import Data.Char
 
 	--find the number of points
 	number :: [[Double]]->Int

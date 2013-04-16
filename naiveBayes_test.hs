@@ -4,26 +4,27 @@ import System.IO
 user cs f =
 	case f of
 		"start" -> do
-						putStrLn "Enter an action [train/classify] :"
+						putStrLn "Enter an action [train/classify/exit] :"
 						action <- getLine
 						user cs action
 		"train" -> do
-						putStr "Category :"
+						utStrLn "Category :"
 						category <- getLine
-						putStr "Text :"
+						putStrLn "Text :"
 						text <- getLine
 						user ( train cs category text ) "start"
 		"classify" -> do
-						putStr "Text :"
+						putStrLn "Text :"
 						text <- getLine
-						putStr $ fst $ classify cs text 
-						putStr ":"
-						putStr $ snd $ classify cs text
-						putStr "\n\n\n"
+						let res = classify cs text
+						putStrLn $ fst res
+						putStr "Probability :"
+						putStrLn . show $ snd res
+						putStrLn "\n"
 						user cs "start"
-		_ -> do
-			user cs "start"
+		"exit" -> do
+			putStrLn "\n"
 
 main = do
-	user cs "start"
+	user (Classifier []) "start"
 							

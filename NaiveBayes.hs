@@ -2,7 +2,7 @@ module NaiveBayes where
 
 	import Data.List
 	import Data.Char
-	newtype Classifier = Classifier {
+	data Classifier = Classifier {
 			wordCategoryStore :: [(String,[(String,Int)])]
 		}
 
@@ -270,7 +270,7 @@ module NaiveBayes where
 	
 	--returns all categories
 	categories :: [(String,[(String,Int)])] -> [String]
-	categories cs = map f cs
+	categories cs = nub $ map f cs
 		where
 			f (a,b)=a
 	
@@ -300,7 +300,7 @@ module NaiveBayes where
 	probDocAllCategories cs doc = map (\cat -> (cat,probDocCategory cs doc cat)) $ categories cs
 	
 	--classify document
-	classify :: Classifier -> String -> String
+	classify :: Classifier -> String -> (String,Double)
 	classify cls doc = 
 		let
 			l = probDocAllCategories (wordCategoryStore cls ) doc
@@ -308,4 +308,4 @@ module NaiveBayes where
 			h = sortBy f l
 			i = head h
 		in
-			fst i
+			i
