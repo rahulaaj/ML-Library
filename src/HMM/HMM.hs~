@@ -304,7 +304,4 @@ main = do
 
 	let trainseq = ["shop","clean","walk","shop","clean","walk","shop","clean","walk","shop","clean","walk","shop","clean","walk"]
 	let hmmNew = baumWelchAlgorithm hmm trainseq 3
-	putStrLn ""
-	putStrLn ""
-	putStrLn "Show HMM New -"
 	print $ show hmmNew
