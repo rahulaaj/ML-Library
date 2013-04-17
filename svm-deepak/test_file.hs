@@ -37,8 +37,6 @@ module Main where
 											| otherwise = accuracy x1s x2s (count+1.0) (total+1.0)
 	accuracy _ _ count total = [count,total,((total-count)*100.0)/total]
 
-	printSv (Solution_SVM a b c)= do 	print a
-
 	main = do
 			data_points_train <- parseFromFile csvFile "train_data.csv"
 			labels_train <- parseFromFile csvFile "train_data_labels.csv"
@@ -52,16 +50,12 @@ module Main where
 			let dp_test = read_data_points data_points_test
 			let lb_train = read_labels labels_train
 			let lb_test = read_labels labels_test
-			let sol = train_svm svm1 (DataSet dp_train lb_train) 0.5 (0)
-			putStrLn "here1"
-			print (weight_w sol)
+			let sol = train_svm svm1 (DataSet dp_train lb_train) 0.1 (10^6)
 			let lb_test_out  = test_svm svm1 sol dp_test
 			let lb_test_out_rounded = map round lb_test_out
 			putStrLn "test original :"
 			let original_lb_test = map round (elems lb_test)
 			print original_lb_test
-			-- putStrLn "Sol :"
-			-- printSv sol
 			putStrLn "test output decimal :"
 			print lb_test_out
 			putStrLn "test output rounded :"
