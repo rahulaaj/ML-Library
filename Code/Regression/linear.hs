@@ -21,9 +21,9 @@ getYList (x:xs)= [(readDList x)!!0]++getYList xs
 readData file = do 
                 handle <- openFile file ReadMode
                 contents <- hGetContents handle
-                let list = Data.List.lines contents
-                print "Input Data"
-                print list
+                let !list = Data.List.lines contents
+                --print "Input Data"
+                --print list
                 hClose handle
                 return (getXList list, getYList list)
 

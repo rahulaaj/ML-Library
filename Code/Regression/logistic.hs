@@ -20,9 +20,9 @@ getData (x:xs)=[(readDList x!!0,[(show $ readDList x!!2, readDList x!!1)])]++get
 readData file = do 
                 handle <- openFile file ReadMode
                 contents <- hGetContents handle
-                let list = Data.List.lines contents
-                print "Input Data"
-                print list
+                let !list = Data.List.lines contents
+                --print "Input Data"
+                --print list
                 hClose handle
                 return (getData list)
 
