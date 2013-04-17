@@ -1,0 +1,35 @@
+
+Project Title:
+
+ML-Library
+
+--------------------------------------------------------
+
+Project Information :
+
+Library of Machine Learning Algorithms in Haskell.
+Following functionalities have been implemented:
+
+1. Support Vector Machine
+2. Multi-variate Linear Regression
+3. Logistic Regression
+4. Hidden Markov Model
+5. Naive Bayes Classifier
+6. K-means Clustering
+7. K Nearest Neighbour Classifier
+8. Latent Semantic Analysis (Text Mining)
+
+
+--------------------------------------------------------
+
+Git Repository :
+URL - https://github.com/rahulaaj/ML-Library
+
+--------------------------------------------------------
+
+Group-5
+
+Deepak Pathak		10222
+Divyanshu Bhartiya 	10250
+Rahul Ajmera 		Y9227451
+Vineet Hingorani	Y9227654
