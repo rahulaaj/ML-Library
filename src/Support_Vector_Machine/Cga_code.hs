@@ -60,5 +60,5 @@ module Cga_code where
 
 	--Adding two arrays elementwise
 	aAdd :: Array_doubles -> Array_doubles -> Array_doubles
-	aAdd = aZipWith (+)				
+	aAdd a1 a2 = aZipWith (+) a1 a2
 	-- =============================================================================================================

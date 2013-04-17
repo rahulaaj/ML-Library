@@ -50,15 +50,24 @@ module Main where
 			let dp_test = read_data_points data_points_test
 			let lb_train = read_labels labels_train
 			let lb_test = read_labels labels_test
-			let sol = train_svm svm1 (DataSet dp_train lb_train) 0.1 (10^6)
-			let lb_test_out  = test_svm svm1 sol dp_test
+			let sol = train_svm (DataSet dp_train lb_train) 0.1 (10^6) svm1
+			let lb_test_out  = test_svm sol dp_test svm1
 			let lb_test_out_rounded = map round lb_test_out
-			putStrLn "test original :"
+			putStrLn "test labels [original] :"
 			let original_lb_test = map round (elems lb_test)
 			print original_lb_test
-			putStrLn "test output decimal :"
-			print lb_test_out
-			putStrLn "test output rounded :"
+			--putStrLn "test output decimal :"
+			--print lb_test_out
+			putStrLn ""
+			putStrLn "test labels generated [rounded] :"
 			print lb_test_out_rounded
-			putStrLn "Accuracy :"
-			print (accuracy original_lb_test lb_test_out_rounded 0.0 0.0)
+			putStrLn ""
+			putStrLn "Accuracy of System :"
+			let x1:x2:x3:xs = accuracy original_lb_test lb_test_out_rounded 0.0 0.0
+			putStr "Total : "
+			print x2
+			putStr "Incorrectly Classified : "
+			print x1
+			putStr "%age Accuracy : "
+			print x3
+			-- print (accuracy original_lb_test lb_test_out_rounded 0.0 0.0)
