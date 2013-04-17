@@ -290,7 +290,7 @@ main = do
 	putStrLn "Forward Algo Recursive started -"
 	print $ forwardAlgorithmRecursive hmm "rainy" ["shop","clean","walk"]
 	putStrLn ""
-	putStrLn "Forward Algo Recursive started -"
+	putStrLn "Forward Algo started -"
 	print $ forwardAlgorithm hmm "rainy" ["shop","clean","walk"]
 	putStrLn ""
 	putStrLn "Backward Algo Recursive started -"
@@ -304,4 +304,7 @@ main = do
 
 	let trainseq = ["shop","clean","walk","shop","clean","walk","shop","clean","walk","shop","clean","walk","shop","clean","walk"]
 	let hmmNew = baumWelchAlgorithm hmm trainseq 3
+	putStrLn ""
+	putStrLn ""
+	putStrLn "Show HMM New -"
 	print $ show hmmNew

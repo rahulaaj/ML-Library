@@ -290,7 +290,7 @@ main = do
 	putStrLn "Forward Algo Recursive started -"
 	print $ forwardAlgorithmRecursive hmm "rainy" ["shop","clean","walk"]
 	putStrLn ""
-	putStrLn "Forward Algo Recursive started -"
+	putStrLn "Forward Algo started -"
 	print $ forwardAlgorithm hmm "rainy" ["shop","clean","walk"]
 	putStrLn ""
 	putStrLn "Backward Algo Recursive started -"
