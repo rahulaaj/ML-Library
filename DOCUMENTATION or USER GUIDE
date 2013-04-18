@@ -49,3 +49,45 @@ where 0 is a negative instance, 1 is a positive instance, second column is the w
 classify :: [(String, Double)] -> [(String, Double)] -> Double
 train :: Int -> [(String, Double)] -> [(String, Double)] -> [(String, Double)]
 Output of train contains the probabilistic weight for each class
+
+Synopsis for Hidden Markov Models :
+let slist = ["rainy","sunny"]
+let olist = ["walk","shop","clean"]
+let hmm = simpleHMM slist olist
+
+Two versions of Forward Algorithm- Recursive and Memoization.
+Takes an HMM, a list of observations and a state and computes the probability of the occurrance of that state at the last observation of the given sequence.
+
+forwardAlgorithmRecursive :: (Show stateType, Eq stateType, Show observationType, Eq observationType) => HMM stateType observationType -> stateType -> [observationType] -> ProbType
+
+print $ forwardAlgorithmRecursive hmm "rainy" ["shop","clean","walk"]
+
+forwardAlgorithm :: (Show stateType, Eq stateType, Show observationType, Eq observationType) => HMM stateType observationType -> stateType -> [observationType] -> ProbType
+
+print $ forwardAlgorithm hmm "rainy" ["shop","clean","walk"]
+
+Two versions of Backward Algorithm- Recursive and Memoization.
+Takes an HMM, a list of observations and a state and computes the probability of the occurrance of the observations in that sequence after the given state occurred.
+
+backwardAlgorithmRecursive :: (Show stateType, Eq stateType, Show observationType, Eq observationType) => HMM stateType observationType -> stateType -> [observationType] -> ProbType
+
+print $ backwardAlgorithmRecursive hmm "rainy" ["shop","clean","walk"]
+
+backwardAlgorithm :: (Show stateType, Eq stateType, Show observationType, Eq observationType) => HMM stateType observationType -> stateType -> [observationType] -> ProbType
+
+print $ backwardAlgorithm hmm "rainy" ["shop","clean","walk"]
+
+Viterbi Algorithm-
+Takes an HMM, a list of observations and computes the most likely state sequence that resulted in given observation sequence.
+
+viterbiAlgorithm :: (Show stateType, Eq stateType, Show observationType, Eq observationType) => HMM stateType observationType -> [observationType] -> [stateType]
+
+print $ viterbiAlgorithm hmm ["shop","clean","walk"]
+
+Baum Welch Algorithm-
+Trains an HMM's parameters(start probability, transition probabilities, emission probabilities) based on the observation sequence given to it for n(given as input) number of iterations.
+
+let trainseq = ["shop","clean","walk","shop","clean","walk","shop","clean","walk","shop","clean","walk","shop","clean","walk"]
+let hmmNew = baumWelchAlgorithm hmm trainseq 3
+
+print $ show hmmNew
