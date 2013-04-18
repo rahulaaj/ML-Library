@@ -3,6 +3,8 @@
 --HMM Class :
 --- has states, observations, start_probability (states X 1), transition_probability (states X states), emission_probability (states X observations)
 
+module HMM.HMM where
+
 import Debug.Trace
 import Data.Maybe
 import Data.Array
@@ -281,7 +283,7 @@ baumWelchIteration hmm obs =
 			sumGamma (stateIndex hmm s_i) 2
 
 --------------------------------------------------------------------
-main = do
+{-main = do
 	let slist = ["rainy","sunny"]
 	let olist = ["walk","shop","clean"]
 	let hmm = simpleHMM slist olist
@@ -307,4 +309,4 @@ main = do
 	putStrLn ""
 	putStrLn ""
 	putStrLn "Show HMM New -"
-	print $ show hmmNew
+	print $ show hmmNew-}

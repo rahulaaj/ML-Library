@@ -1,0 +1,5 @@
+To build using cabal:
+$runghc Setup.hs clean
+$runghc Setup.hs configure
+$runghc Setup.hs build
+

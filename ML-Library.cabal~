@@ -60,7 +60,7 @@ Library
   Exposed-modules:	 Main, KNN.KNN, Linear.Linear, HMM.HMM, Logistic.Logistic, NaiveBayes.NaiveBayes, KMeans.KMeans, Svm.Kernel_functions, Svm.Cga_code, Svm.Svm, Svm.Data.CSV, LSA.LSA
   
   -- Packages needed in order to build this package.
-  Build-depends:  base, text, parsec, hmatrix, data-memocombinators, logfloat, list-extras, array
+  Build-depends:  base, text, parsec, hmatrix, data-memocombinators, logfloat, list-extras
 
   Hs-source-dirs:    src  
 

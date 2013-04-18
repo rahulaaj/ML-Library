@@ -1,0 +1,51 @@
+Synopsis for KNN :
+knn :: [(String,[Double])]->[Double]->Int->String
+knn takes a list of training data , each element being a 2-tuple of the label and the coordicates of point , a point to classify and 'k', and outputs the resultant label.
+for example : refer to src/KNN/knn_test.hs
+
+Synopsis for KMeans :
+kmeans :: Int->[[Double]]->[[[Double]]]
+kmeans takes 'k' and a set of points(as a list of list) and returns k clusters of points.
+for example : refer to src/KMeans/kmeans_test.hs
+
+Synopsis for NaiveBayes :
+train :: Classifier -> String -> String -> Classifier
+train takes a classifier, a new input document, the respective class of it and results a new classifier
+classify :: Classifier -> String -> (String,Double)
+classify takes a classifier and a document to be classified and results the class with maximum probability 
+for example : refer to src/NaiveBayes/naiveBayes_test.hs
+
+Synopsis for LSA :
+lsa :: [String]->Int->(Matrix Double,Matrix Double,Matrix Double)
+lsa takes a set of documents and the number 'k' (estimate of number of topics in documents) and results the U,sigma,trans V matrices mapped to k dimensions
+for example : refer to src/LSA/lsa_test.hs
+
+Synopsis for SVM :
+train_svm	:: DataSet -> Double -> Int -> LeastSquareSVM -> Solution_SVM
+train_svm is used for training- input: training dataset with labels, epsilon and max_iter for conjugate gradient algorithm and output: Support vector solution i.e. weights,support vector,bias b.
+test_svm :: Solution_SVM -> Array_doublesList -> LeastSquareSVM -> [Double]
+test_svm takes input solution and test_datapoints, gives the list of labels as output.
+for example : refer to src/Svm/test_file.hs
+
+Synopsis for Linear Regression :
+readData :: String -> (m([Int]),m([Int]))
+inputfile format example :
+43.0	51.0	30.0	39.0	61.0	92.0	45.0
+63.0	64.0	51.0	54.0	63.0	73.0	47.0
+71.0	70.0	68.0	69.0	76.0	86.0	48.0
+where first column is Y and rest columns are Xi's
+bSolve :: Matrix -> Matrix -> Int -> Int -> [(Double,Int)]
+[(Double,Int)] is the list of coefficients of Xi's
+
+Synopsis for Logistic Regression :
+getData :: String -> (m(([Double,String,Double)]))
+inputfile format example :
+0	5.1	1
+1	4.9	1
+1	4.7	1
+1	4.6	1
+0	6.4	2
+where 0 is a negative instance, 1 is a positive instance, second column is the weight and 3rd column is the class name
+classify :: [(String, Double)] -> [(String, Double)] -> Double
+train :: Int -> [(String, Double)] -> [(String, Double)] -> [(String, Double)]
+Output of train contains the probabilistic weight for each class

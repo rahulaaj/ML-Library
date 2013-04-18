@@ -1,4 +1,4 @@
-module KNN.KNN where
+module src.KNN.KNN where
 	import Data.List
 
 	dist :: [Double]->[Double]->Double
